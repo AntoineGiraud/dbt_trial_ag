@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    description: A clone of a Postgres application database
+    database: postgres
+    schema: raw
+    tables:
+      - name: raw_customers
+        description: Raw customers data.
+        columns:
+          - name: id
+            description: Primary key for customers data.
+            tests:
+              - unique
+              - not_null
+
+      - name: raw_orders
+        description: Raw orders data.
+        columns:
+          - name: id
+            description: Primary key for orders data.
+            tests:
+              - unique
+              - not_null
+        # loaded_at_field: order_date
+        # freshness:
+        #   warn_after: {count: 2, period: day}
+        #   error_after: {count: 4, period: day}
+      - name: raw_payments
