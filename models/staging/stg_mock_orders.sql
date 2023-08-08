@@ -6,5 +6,7 @@
 select *
 from {{ source('jaffle_shop', 'mock_orders') }}
 {% if is_incremental() %}
-where updated_at >= (select max(updated_at) from {{ this }})
+  where updated_at >= (
+      select dateadd(day, -2, max(updated_at)::date) from {{this}}
+    )
 {% endif %}
