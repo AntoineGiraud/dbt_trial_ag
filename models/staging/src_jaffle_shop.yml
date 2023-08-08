@@ -14,7 +14,6 @@ sources:
             tests:
               - unique
               - not_null
-
       - name: raw_orders
         description: Raw orders data.
         columns:
@@ -33,3 +32,4 @@ sources:
         #   warn_after: {count: 2, period: day}
         #   error_after: {count: 4, period: day}
       - name: raw_payments
+      - name: mock_orders
