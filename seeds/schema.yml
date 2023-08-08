@@ -1,26 +1,24 @@
 version: 2
 
-models:
-  - name: stg_employee
+seeds:
+  - name: raw_employee
     columns:
       - name: customer_id
         tests:
           - unique
           - not_null
-      - name: employee_id
+  - name: raw_customers
+    description: Raw customers data.
+    columns:
+      - name: id
+        description: Primary key for customers data.
         tests:
           - unique
           - not_null
-  - name: stg_customers
+  - name: raw_orders
     columns:
-      - name: customer_id
-        tests:
-          - unique
-          - not_null
-
-  - name: stg_orders
-    columns:
-      - name: order_id
+      - name: id
+        description: Primary key for orders data.
         tests:
           - unique
           - not_null
@@ -29,10 +27,9 @@ models:
         tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
-
-  - name: stg_payments
+  - name: raw_payments
     columns:
-      - name: payment_id
+      - name: id
         tests:
           - unique
           - not_null
