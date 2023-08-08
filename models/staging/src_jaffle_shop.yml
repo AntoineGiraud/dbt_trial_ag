@@ -23,6 +23,11 @@ sources:
             tests:
               - unique
               - not_null
+          - name: status
+            description: '{{ doc("order_status") }}'
+            tests:
+              - accepted_values:
+                  values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
         # loaded_at_field: order_date
         # freshness:
         #   warn_after: {count: 2, period: day}
