@@ -9,6 +9,6 @@ select *
 from {{ source('jaffle_shop', 'mock_orders') }}
 {% if is_incremental() %}
   where updated_at >= (
-      select dateadd(day, -2, max(updated_at)::date) from {{this}}
+      select date(max(updated_at) -interval '2 day') from {{this}}
     )
 {% endif %}
