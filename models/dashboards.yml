@@ -12,7 +12,7 @@ exposures:
     depends_on:
       - ref('fct_order')
       - ref('dim_customer')
-      - source('jaffle_shop', 'mock_orders')
+      - ref('stg_mock_orders')
 
     owner:
       name: Antoine Giraud

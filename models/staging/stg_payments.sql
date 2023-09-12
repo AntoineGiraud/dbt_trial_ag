@@ -6,3 +6,4 @@ select
     -- `amount` is currently stored in cents, so we convert it to dollars
     amount / 100 as amount
 from  {{ ref('raw_payments') }}
+{# from {{ source('stripe', 'payment') }} #}

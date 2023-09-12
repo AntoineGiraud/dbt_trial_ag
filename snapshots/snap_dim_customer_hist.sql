@@ -4,7 +4,6 @@
 
 {{
     config(
-      target_database='postgres',
       target_schema=new_schema,
       unique_key='customer_id',
 
@@ -12,6 +11,7 @@
       check_cols=['first_name', 'last_name']
     )
 }}
+-- target_database='postgres',
 -- strategy='timestamp',
 -- updated_at='updated_at'
 

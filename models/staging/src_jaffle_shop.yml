@@ -2,11 +2,11 @@ version: 2
 
 sources:
   - name: jaffle_shop
-    description: A clone of a Postgres application database
-    database: postgres
-    schema: raw
+    description: BigQuery DBT Sample data
+    database: dbt-tutorial
+    schema: jaffle_shop
     tables:
-      - name: raw_customers
+      - name: customers
         description: Raw customers data.
         columns:
           - name: id
@@ -14,7 +14,7 @@ sources:
             tests:
               - unique
               - not_null
-      - name: raw_orders
+      - name: orders
         description: Raw orders data.
         columns:
           - name: id
@@ -31,5 +31,10 @@ sources:
         # freshness:
         #   warn_after: {count: 2, period: day}
         #   error_after: {count: 4, period: day}
-      - name: raw_payments
-      - name: mock_orders
+  - name: stripe
+    description: BigQuery DBT Sample data
+    database: dbt-tutorial
+    schema: stripe
+    tables:
+      - name: payment
+      # - name: mock_orders

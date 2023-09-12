@@ -1,0 +1,5 @@
+order_id,status,created_at,updated_at
+1,'delivered','2020-01-01','2020-01-04'
+2,'shipped','2020-01-02','2020-01-04'
+3,'shipped','2020-01-03','2020-01-04'
+4,'processed','2020-01-04','2020-01-04'
