@@ -4,7 +4,6 @@
 
 {{
     config(
-      target_database='postgres',
       target_schema=new_schema,
       unique_key='order_date',
 
@@ -12,6 +11,7 @@
       check_cols=['nb_order', 'total_amount']
     )
 }}
+-- target_database='postgres',
 -- strategy='timestamp',
 -- updated_at='updated_at'
 

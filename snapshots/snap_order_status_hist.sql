@@ -4,7 +4,6 @@
 
 {{
     config(
-      target_database='postgres',
       target_schema=new_schema,
       unique_key='order_id',
 
@@ -12,6 +11,7 @@
       updated_at='updated_at'
     )
 }}
+    -- target_database='postgres',
 
 SELECT
     order_id,
